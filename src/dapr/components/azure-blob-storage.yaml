@@ -1,0 +1,20 @@
+apiVersion: dapr.io/v1alpha1
+kind: Component
+metadata:
+  name: azure-blob-storage
+  namespace: dragonball-library
+spec:
+  type: bindings.azure.blobstorage
+  version: v1
+  metadata:
+  - name: accountName
+    value: "storage5gvqxy7gckwwa"
+  - name: container
+    value: "characters"
+  - name: accountKey
+    value: "<SECRET_VALUE>"
+  auth:
+    secretStore: azure-keyvault
+scopes:
+- apiservice
+- backgroundservice
